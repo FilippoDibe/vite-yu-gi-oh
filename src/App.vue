@@ -1,12 +1,41 @@
 <script >
-// import HelloWorld from './components/HelloWorld.vue'
+// axios 
+import axios from 'axios';
+// componenti 
 import AppHeader from './components/AppHeader.vue';
 import ListaCarte from './components/ListaCarte.vue';
+
+// store 
+import { store } from './store';
+
 export default {
   components: {
     AppHeader,
     ListaCarte,
+  },
+  data() {
+    return {
+      store,
+    }
+  },
+  methods: {
+    getCarta() {
+      axios
+        .get(store.apiURL)
+        .then((res => {
+          console.log(res.data.results);
+          store.listacarte = res.data.results;
+        }))
+        .catch((err) => {
+          console.log("errori", err);
+        });
+    }
+  },
+  created() {
+    this.getCarta();
   }
+
+
 
 }
 </script>
@@ -24,5 +53,6 @@ export default {
 
 main {
   padding-top: 20px;
+
 }
 </style>
