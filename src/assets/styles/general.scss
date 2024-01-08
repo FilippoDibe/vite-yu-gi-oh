@@ -1,0 +1,29 @@
+@use './patials/variables' as*;
+
+// bootstrap 
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// font 
+@import 'node_modules/@fontsource/montserrat/index.css';
+@import 'node_modules/@fontsource/montserrat/700.css';
+
+body {
+    font-family: $main-font;
+    color: $text-color;
+    background-image: linear-gradient(to left,
+            transparent opx,
+            transparent 20px,
+            rgba(#000, 0.02)20px,
+            rgba(#000, 0.02)40px),
+        linear-gradient(to bottom,
+            transparent opx,
+            transparent 20px,
+            rgba(#000, 0.02)20px,
+            rgba(#000, 0.02)40px);
+    background-size: 40px, 100% 40px;
+
+
+
+
+
+}
