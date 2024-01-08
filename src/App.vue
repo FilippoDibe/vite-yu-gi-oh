@@ -1,17 +1,21 @@
 <script >
 // import HelloWorld from './components/HelloWorld.vue'
 import AppHeader from './components/AppHeader.vue';
+import ListaCarte from './components/ListaCarte.vue';
 export default {
   components: {
     AppHeader,
+    ListaCarte,
   }
 
 }
 </script>
 
 <template>
+  <AppHeader />
   <main>
-    <AppHeader />
+    <!-- bottone per cambiare le modalita di ricerca delle carte  -->
+    <ListaCarte />
   </main>
 </template>
 
