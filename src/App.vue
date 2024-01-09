@@ -4,6 +4,7 @@ import axios from 'axios';
 // componenti 
 import AppHeader from './components/AppHeader.vue';
 import ListaCarte from './components/ListaCarte.vue';
+import RicercaCarte from './components/RicercaCarte.vue'
 
 // store 
 import { store } from './store';
@@ -12,6 +13,7 @@ export default {
   components: {
     AppHeader,
     ListaCarte,
+    RicercaCarte,
   },
   data() {
     return {
@@ -21,10 +23,11 @@ export default {
   methods: {
     getCarta() {
       axios
-        .get(store.apiURL)
-        .then((res => {
-          console.log(res.data.results);
-          store.listacarte = res.data.results;
+        .get(this.store.apiURL)
+        .then((response => {
+          console.log(response);
+          this.store.listacarte = response.data.data.slice(0, 20);
+
         }))
         .catch((err) => {
           console.log("errori", err);
@@ -43,7 +46,7 @@ export default {
 <template>
   <AppHeader />
   <main>
-    <!-- bottone per cambiare le modalita di ricerca delle carte  -->
+    <RicercaCarte />
     <ListaCarte />
   </main>
 </template>
@@ -52,7 +55,7 @@ export default {
 @use './styles/general.scss';
 
 main {
-  padding-top: 20px;
-
+  background-color: orange;
+  padding-top: 50px;
 }
 </style>
