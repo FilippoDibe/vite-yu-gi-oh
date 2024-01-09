@@ -2,7 +2,7 @@
 export default {
     name: 'CartaSingola',
     props: {
-        info: Object
+        info: Object,
     }
 
 }
