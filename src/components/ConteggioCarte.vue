@@ -1,7 +1,6 @@
 <script>
-import { computed } from 'vue';
-import { store } from '../store'; // Assicurati che il percorso sia corretto
 
+import { store } from '../store';
 export default {
     name: 'ConteggioCarte',
     computed: {
@@ -21,6 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 div {
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 </style>
